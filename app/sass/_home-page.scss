@@ -1,0 +1,360 @@
+@import 'fonts';
+@import 'variables';
+@import 'libs.scss';
+
+.rent {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 68.26%, #000000 91.74%), url(../images/rent-bg.png), #000000 no-repeat;
+    background-position: center bottom;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 96%, 78% 97%, 59% 98%, 0 100%);
+    background-size: cover;
+    margin-bottom: 2.7rem;
+
+    &-wrapper {
+        max-width: 57rem;
+        margin-left: auto;
+        margin-top: 7.9rem;
+        text-align: center;
+    }
+
+    &-title {
+        font-family: $Montserrat;
+        font-weight: 900;
+        font-size: 5rem;
+        line-height: 6.1rem;
+        color: $wihte;
+    }
+
+    &-text {
+        font-family: $Ubuntu;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        color: $light-shade;
+        margin-bottom: 2.4rem;
+    }
+
+    &-form__title-wrapper {
+        display: flex;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 .1rem 0 0 $dark-shade;
+
+        .main-form__tabs {
+            font-family: $Ubuntu;
+            font-weight: 500;
+            font-size: 2rem;
+            line-height: 2.2rem;
+            color: $dark-shade;
+            flex: 50%;
+            padding-bottom: 1.1rem;
+            cursor: pointer;
+            transition: .3s ease all;
+            border-bottom: .3rem solid transparent;
+            &.tabs-active {
+                color: $black;
+                border-bottom: .3rem solid $black;
+            }
+        }
+    }
+        .form-tabs__wrapper {
+            display: none;
+        }
+
+        .tabs-wrapper__active {
+            animation-name: open;
+            animation-duration: .5s ;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            animation-delay: 0s;
+            display: block;
+        }
+
+        @keyframes open {
+            0% {
+              display: block;
+              opacity: 0;
+              visibility: hidden;
+            }
+            100% {
+              display: block;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+
+    
+
+    .rent-form {
+        max-width: 57rem;
+        background-color: $wihte;
+        box-shadow: 0px 2.66073px 13.3036px rgba(0, 0, 0, 0.1);
+        padding: 3rem 5rem;
+
+        &__select {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2.2rem;
+            margin-bottom: 1.5rem;
+
+            input {
+                font-family: $Ubuntu;
+                font-weight: 400;
+                font-size: 1.4rem;
+                line-height: 1.6rem;
+                color: $dark-shade;
+                border: none;
+                border-radius: none;
+                box-shadow: 0 .1rem 0 0 $dark-shade;
+                padding-bottom: .4rem;
+                padding-left: .8rem;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+        
+        .select2-selection {
+            border: none;
+            box-shadow: 0 .1rem 0 0#686868;
+            border-radius: 0;
+            
+        }
+
+        .select2-selection__rendered {
+            text-align: left;
+            line-height: 3.7rem;
+            font-family: $Ubuntu;
+            font-weight: 400;
+            font-size: 1.4rem;
+            color: $dark-shade;
+        }
+
+        .select2-selection__placeholder {
+            font-family: $Ubuntu;
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: $dark-shade;
+        }        
+
+        .select2-selection__arrow b {
+            border: none;
+            background: url(../images/select-arrow-icon.svg) no-repeat center center;
+            width: 1.6rem;
+            height: 0.9rem;
+            top: 1.2rem;
+            transform: rotate(0);
+            transition: .3s ease all;
+        }
+
+        .select2-container--open .select2-selection__arrow b {
+            transform: rotate(180deg);
+        }
+    
+    }
+    
+    .rent-another__info {
+        text-align: left;
+        input {
+            margin-bottom: 2.2rem
+        }
+       
+    .rent-container {
+        display: inline-block;
+        align-items: center;
+        position: relative;
+        margin-bottom: 2.2rem;
+        cursor: pointer;
+        font-family: $Ubuntu;
+        font-weight: 400;
+        line-height: 1.6rem;
+        font-size: 1.4rem;
+        padding-left: 2.8rem;
+        color: $dark-shade;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+  
+    .rent-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    
+    
+    .checkmark {
+        position: absolute;
+        top: .2rem;
+        left: .8rem;
+        height: 1.1rem;
+        width: 1.1rem;
+        border: 2px solid #FF1820;
+        border-radius: 50%;
+        background-color: #eee;
+    }
+   
+    .rent-container input:checked ~ .checkmark {
+        background: $linear;
+    }
+    
+    
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    
+    .rent-container input:checked ~ .checkmark:after {
+        display: block;
+    }
+    
+   
+    .rent-container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    }
+
+    .rent-modal__reservation {
+        @extend %top-btn;
+        width: 100%;
+    }
+
+    .rent-modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, .5);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease-out all;
+        z-index: 9999;
+        &.modals-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .rent-modal__content {
+            background-color: $wihte;
+            box-shadow: 0px 2.66073px 13.3036px rgba(0, 0, 0, 0.1);
+            border-radius: .6rem;
+            padding: 4.4rem 4.1rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            max-width: 50.1rem;
+            align-items: center;
+        }
+
+        .rent-modal__close {
+            position: absolute;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            top: 2rem;
+            right: 2rem;
+        }
+
+        .rent-modal__title {
+            font-family: $Ubuntu;
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 3.4rem;
+            color: $black;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .rent-modal__text {
+            font-family: $Ubuntu;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 2rem;
+            color: $dark-shade;
+            margin-bottom: 2.5rem;
+        }     
+        
+        .rent-modal__form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            input {
+                border: none;
+                font-family: $Ubuntu;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.2rem;
+                color: $shade;
+                margin-bottom: 1.3rem;
+                box-shadow: 0 1px 0 0 #686868;
+                padding: 0 0 .9rem .6rem;
+                outline: none;
+            }
+
+            textarea {
+                border: none;
+                font-family: $Ubuntu;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.2rem;
+                color: $shade;
+                margin-bottom: 1.3rem;
+                box-shadow: 0 1px 0 0 #686868;
+                outline: none;
+                margin-bottom: 2.7rem;
+                resize: none;
+                max-height: 10.5rem;
+                padding: 0 0 0 .6rem;
+            }
+        }
+
+        .rent-modal__form-btn {
+            @extend %top-btn;
+            width: 100%;
+        }
+    }
+
+}
+
+.rent-select {
+    .select2-results__option--selectable {
+        font-family: $Ubuntu;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: $dark-shade;
+    }
+
+    .select2-results__option--highlighted.select2-results__option--selectable {
+        background: $linear;
+    }
+  
+    .select2-results__option--selected {
+        background-color: transparent;
+    }
+
+    .select2-results__options {
+        box-shadow: 0 0 2px 0 black;
+    }
+}

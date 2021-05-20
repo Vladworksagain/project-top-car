@@ -1,0 +1,263 @@
+.header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 68.26%, #000000 91.74%), #000000;
+    padding-top: 2.8rem;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    max-width: 70.3rem;
+    width: 100%;
+    margin-left: auto;
+    justify-content: space-between;
+    
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 2rem;
+        
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        font-family: $Ubuntu;
+        font-weight: 500;
+        color: #8A8A8A;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    svg {
+        margin-right: 1.2rem;
+    }
+
+    .top-header__currency {
+        max-width: 9.3rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        .select2-selection {
+            border: none;
+            width: max-content;
+            background-color: transparent;
+        }
+
+        .select2-container 
+            .select2-selection--single {
+                display: flex;
+                align-items: center;
+            }
+
+        .select2-selection__rendered {
+            font-family: $Ubuntu;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: $wihte;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        .select2-selection__placeholder {
+            font-family: $Ubuntu;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: $wihte;
+            text-transform: uppercase;
+        }
+
+        .select2-container--default
+            .select2-selection--single 
+                .select2-selection__arrow {
+                    width: 0;
+                    height: 0;
+
+                    &:first-child {
+                        width: 10px;
+                    }
+                }
+
+
+        
+                .select2-selection__arrow b {
+                    color: white;
+                    border: none;
+                    position: relative;
+
+                    &::after {
+                        content: "▼";
+                        position: absolute;
+                        top: 1rem;
+                        left: -.5rem;
+                        transform: rotate(0);
+                        transition: .3s ease all;
+                    }
+                }
+
+                .select2-container--open 
+                    .select2-selection__arrow b:after {
+                        transform: rotate(180deg);
+                    }
+    }
+}
+.currency-list {
+    .select2-results__option--highlighted.select2-results__option--selectable {
+        background: $linear;
+    }
+
+    .select2-results__option--selectable {
+        font-family: $Ubuntu;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: $dark-shade;
+        text-transform: uppercase;
+    }
+
+    .select2-results__option--selected {
+        background-color: transparent;
+    }   
+}
+
+.bottom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__list {
+        display: flex;
+        max-width: 73rem;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        border-bottom: .3rem solid transparent;
+        transition: .3s ease all;
+        padding-bottom: .2rem;
+
+        &:hover {
+            border-bottom: .3rem solid $accent;
+        }
+
+        &:last-child {
+            border-bottom: .3rem solid transparent;   
+        }
+    }
+
+    &__link {
+        font-family: $Ubuntu;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        color: $light-shade;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .modal_btn {
+        @extend %top-btn;
+        cursor: pointer;
+    }
+}
+    .modals-request__call {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, .5);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease-out all;
+        z-index: 9999;
+        &.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: $wihte;
+            box-shadow: 0px 2.66073px 13.3036px rgba(0, 0, 0, 0.1);
+            border-radius: .6rem;
+            padding: 4.6rem 4.1rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            max-width: 50.1rem;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-family: $Ubuntu;
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 3.4rem;
+            color: $black;
+            margin-bottom: 1rem;
+        }
+
+        .modal-text {
+            font-family: $Ubuntu;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 2rem;
+            color: $dark-shade;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            border: none;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            outline: none;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            input {
+                border: none;
+                font-family: $Ubuntu;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.2rem;
+                color: $shade;
+                margin-bottom: 1.3rem;
+                box-shadow: 0 1px 0 0 #686868;
+                padding-bottom: .9rem;
+
+                &:last-of-type {
+                    margin-bottom: 2.7rem;
+                }
+            }
+        }
+
+        .modal-form__btn {
+            @extend %top-btn;
+            width: 100%;
+        }
+    }
+
+    

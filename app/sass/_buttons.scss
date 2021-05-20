@@ -1,0 +1,19 @@
+%top-btn {
+    width: 20rem;
+    font-family: $Ubuntu;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: $wihte; 
+    border-radius: .5rem;
+    background: $linear;
+    box-shadow: 0px 2px 10px rgba(255, 10, 19, 0.9);
+    border: 0;
+    padding: 1.3rem;
+    transition: .3s ease all;
+
+    &:hover {
+        color: #393939;
+        background: linear-gradient(158.71deg, #ffffff 17.69%, #ffffff 85.6%);
+    }
+}
