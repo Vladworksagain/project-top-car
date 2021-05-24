@@ -222,3 +222,29 @@ buttonTabs.forEach((tabs) => {
 
 document.querySelector('.main-form__tabs').click();
 // rent-form__tabs //
+
+const mainCard = document.querySelectorAll('.about-classes__hover');
+
+mainCard.forEach((test) =>{
+    test.addEventListener('mouseenter', (e) => {
+      let target = e.target;
+      target.classList.add('item-hover__active')
+    })
+    test.addEventListener('mouseleave', (e) => {
+      let target = e.target;
+      target.classList.remove('item-hover__active')
+    })
+  })
+
+  mainCard.forEach((test1) =>{
+    test1.addEventListener('mouseenter', (e) => {
+      let target1 = e.target;
+      target1.classList.add('classes-card__active')
+    })
+    test1.addEventListener('mouseleave', (e) => {
+      let target1 = e.target;
+      target1.classList.remove('classes-card__active')
+    })
+  })
+
+// hover card //

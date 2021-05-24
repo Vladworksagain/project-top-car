@@ -34,3 +34,12 @@
     .footer {
         flex: 0 0 auto;
     }
+
+    .main-title {
+        font-family: $Montserrat;
+        font-weight: 900;
+        font-size: 3.5rem;
+        line-height: 4.2rem;
+        columns: $black;
+        text-align: center;
+    }

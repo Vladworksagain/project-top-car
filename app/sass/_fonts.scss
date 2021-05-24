@@ -5,6 +5,14 @@
 	font-weight: 900;
 	font-style: normal;
 	}
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('../fonts/Ubuntu-Bold.eot');
+	src: local('☺'), url('../fonts/Ubuntu-Bold.woff') format('woff'), url('../fonts/Ubuntu-Bold.ttf') format('truetype'),;
+	font-weight: 700;
+	font-style: normal;
+	}
 @font-face {
 	font-family: 'Ubuntu';
 	src: url('../fonts/Ubuntu-Medium.eot');
